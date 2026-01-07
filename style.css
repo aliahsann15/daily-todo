@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #171717;
+    font-family: Arial;
+    padding: 0;
+    margin: 0;
+    color: white;
+}
+
+/* DRAG AREA */
+#titlebar {
+    -webkit-app-region: drag;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move;
+    background: #222;
+    max-height: 35px;
+    overflow: hidden;
+
+    & h1 {
+        font-size: 18px;
+        margin: 0;
+        padding: 25px 10px;
+    }
+}
+
+.window-btns {
+    display: flex;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+/* BUTTONS MUST NOT DRAG */
+.window-btns button {
+    -webkit-app-region: no-drag;
+    background: none;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0;
+}
+
+#minimize {
+    background-color: #444;
+    height: 35px;
+    padding: 0 12px;
+}
+#close {
+    background-color: #E81123;
+    height: 35px;
+    padding: 0 13px;
+}
+
+#content {
+    padding: 15px;
+}
+
+label {
+    display: block;
+    padding-left: 2px;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 7px 10px;
+    background: #333;
+    border: none;
+    color: white;
+    font-size: medium;
+    margin-bottom: 15px;
+    border-radius: 3px;
+}
+input:focus {
+    outline: none;
+    box-shadow: 0 0 5px #555;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 65vh;
+    overflow-y: auto;
+}
+
+ul::-webkit-scrollbar {
+   display: none;
+}
+
+li {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 7px 0;
+    border-bottom: 1px solid #222;
+    overflow: hidden;
+
+    & span {
+        max-width: 80%;
+        word-wrap: break-word;
+    }
+}
+
+li:hover {
+    background: #222;
+}
+
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 7px;
+    transform: scale(1.2);
+    transform: translateY(6px);
+}
